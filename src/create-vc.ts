@@ -70,7 +70,7 @@ async function main() {
   })
   console.log(validated)
 
-  const resolver = new Resolver(getResolver({ infuraProjectId: INFURA_PROJECT_ID }))
+  const resolver = new Resolver(getResolver({ infuraProjectId: process.env.INFURA_PROJECT_ID }))
   // const decoded = decodeJWT(verifiableCredential.proof.jwt)
 
   // VERIFY VC
