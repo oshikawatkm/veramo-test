@@ -1,5 +1,20 @@
 # veramo-test
 
+## Setup
+```
+yarn install
+````
+
+write configration on `.env` file
+```
+INFURA_PROJECT_ID=821.....
+KMS_SECRET_KEY=012.....
+```
+## verify VP
+
+```
+yarn vc:verify
+```
 
 ## reference
 https://www.npmjs.com/package/did-jwt-vc
