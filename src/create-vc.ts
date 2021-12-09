@@ -2,10 +2,14 @@ import { agent } from './veramo/setup'
 import { Resolver } from 'did-resolver'
 import { getResolver } from 'ethr-did-resolver'
 import { decodeJWT } from 'did-jwt'
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env' });
 import { verifyCredential, verifyPresentation, JwtPresentationPayload } from 'did-jwt-vc'
-const INFURA_PROJECT_ID = '9273e0d250174b83ad248e75d54375cc'
 
 async function main() {
+  const issuer = await agent.didManagerGetOrCreate({
+    alias: 'alice'
+  })
   const user = await agent.didManagerGetOrCreate({
     alias: 'alice'
   })
@@ -76,6 +80,9 @@ async function main() {
   // VERIFY VC
   const verifiedVC = await verifyCredential(verifiableCredential.proof.jwt, resolver)
   console.log(verifiedVC)
+
+
+  console.log(verifiablePresentation)
 }
 
 main().catch(console.log)

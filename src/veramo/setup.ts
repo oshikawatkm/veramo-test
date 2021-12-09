@@ -30,13 +30,14 @@ import { CredentialIssuer } from '@veramo/credential-w3c'
 import { SelectiveDisclosure } from '@veramo/selective-disclosure'
 // This will be the name for the local sqlite database for demo purposes
 
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env' });
+
 const DATABASE_FILE = 'database.sqlite'
 
 // You will need to get a project ID from infura https://www.infura.io
-const INFURA_PROJECT_ID = process.env.INFURA_PROJECT_ID
-
-// This will be the secret key for the KMS 
-const KMS_SECRET_KEY = process.env.KMS_SECRET_KEY
+let INFURA_PROJECT_ID: string = (process.env.INFURA_PROJECT_ID as string)
+let KMS_SECRET_KEY: string = (process.env.KMS_SECRET_KEY as string)
 
 const dbConnection = createConnection({
   type: 'sqlite',

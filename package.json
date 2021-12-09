@@ -21,6 +21,7 @@
     "did-jwt": "^5.12.1",
     "did-jwt-vc": "^2.1.8",
     "did-resolver": "^3.1.4",
+    "dotenv": "^10.0.0",
     "ethr-did-resolver": "^5.0.2",
     "sqlite3": "^5.0.2",
     "web-did-resolver": "^2.0.7"
@@ -29,6 +30,6 @@
     "id:list": "ts-node ./src/list-identifiers",
     "id:create": "ts-node ./src/create-identifier",
     "vc:create": "ts-node ./src/create-vc",
-    "vc:verify": "ts-node ./src/verify-vc"
+    "vc:verify": "ts-node ./src/verify-vp"
   }
 }
